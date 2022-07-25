@@ -250,7 +250,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
             completionHandler(true)
             
         }
-        deleteAction.image = UIImage(systemName: "trash.square")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+        deleteAction.image = UIImage(systemName: "trash")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
         deleteAction.backgroundColor = .black
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
