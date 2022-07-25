@@ -62,7 +62,8 @@ class PreviewVC: UIViewController {
         guard let location = weatherModel.location else { return }
         
         CoreDataManager.saveLocation(location)
-        
+        let array: [Location] = CoreDataManager.getAllLocations()
+        print(array)
         searchVC?.weatherModels.append(weatherModel)
         searchVC?.tableView.reloadData()
         searchVC?.searchController.searchBar.text?.removeAll()

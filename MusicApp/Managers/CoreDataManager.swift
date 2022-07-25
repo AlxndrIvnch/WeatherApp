@@ -61,9 +61,7 @@ class CoreDataManager {
 extension CoreDataManager {
     
     static func getAllLocations() -> [Location] {
-        
-        let context = context
-        
+
         let request = LocationCoreData.fetchRequest()
         
         do {
@@ -75,9 +73,7 @@ extension CoreDataManager {
         }
     }
     static func getAllLocations() -> [LocationCoreData] {
-        
-        let context = context
-        
+
         let request = LocationCoreData.fetchRequest()
         
         do {
@@ -96,8 +92,7 @@ extension CoreDataManager {
     }
     
     static func deleteLocation(_ location: Location) {
-        let context = context
-        
+  
         let request = LocationCoreData.fetchRequest()
         
         do {

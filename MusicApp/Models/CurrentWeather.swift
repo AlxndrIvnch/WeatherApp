@@ -20,7 +20,7 @@ struct CurrentWeather: Decodable, Hashable {
     let precip_mm: Double?
     let pressure_mb: Int?
     let uv: Int?
-    let vis_km: Int?
+    let vis_km: Double?
     let wind_degree: Int?
     let wind_dir: String?
     let wind_kph: Double?

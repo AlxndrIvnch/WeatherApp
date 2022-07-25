@@ -51,9 +51,8 @@ class ViewController: UIViewController {
         } else {
             for location in locations {
                 
-                guard let name = location.name else { continue }
-                
-                NetworkManager.request(for: .forecast, with: name) { [weak self] data in
+                NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { [weak self] data in
+                    
                     guard let data = data, let self = self else { return }
                     
                     do {

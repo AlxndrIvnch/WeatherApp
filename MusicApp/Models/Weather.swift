@@ -12,3 +12,4 @@ struct Weather: Decodable {
     let current: CurrentWeather?
     let forecast: Forecast?
 }
+	

@@ -152,7 +152,6 @@ class SearchVC: UIViewController {
                 
                 if My.cellSnapshot!.frame.maxY > tableView.bounds.maxY, row < weatherModels.count - 1 && canMove  {
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { () -> Void in
-                        print(row)
                         self.canMove = false
                         self.tableView.scrollToRow(at: IndexPath(row: row + 1, section: 0), at: .bottom, animated: false)
                     }) { self.canMove = $0 }
