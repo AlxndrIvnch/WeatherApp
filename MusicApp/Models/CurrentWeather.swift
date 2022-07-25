@@ -24,5 +24,6 @@ struct CurrentWeather: Decodable, Hashable {
     let wind_degree: Int?
     let wind_dir: String?
     let wind_kph: Double?
+    let is_day: Int?
     
 }

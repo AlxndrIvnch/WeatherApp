@@ -18,8 +18,8 @@ class PreviewVC: UIViewController {
     var weatherModel: Weather! {
         didSet {
             collectionView.reloadData()
-            guard let code = weatherModel.current?.condition?.code else { return }
-            self.view.backgroundColor = BackgroundManager.getColor(with: code)
+            guard let code = weatherModel.current?.condition?.code, let isDay = weatherModel.current?.is_day == 1 ? true : false else { return }
+            self.view.backgroundColor = BackgroundManager.getColor(with: code, and: isDay)
         }
     }
     

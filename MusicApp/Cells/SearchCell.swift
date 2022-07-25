@@ -20,8 +20,8 @@ class SearchCell: UITableViewCell {
     
     var weatherModel: Weather! {
         didSet {
-            if let code = weatherModel?.current?.condition?.code {
-                self.containerView.backgroundColor = BackgroundManager.getColor(with: code)
+            if let code = weatherModel?.current?.condition?.code, let isDay = weatherModel.current?.is_day == 1 ? true : false {
+                self.containerView.backgroundColor = BackgroundManager.getColor(with: code, and: isDay)
             }
         }
     }

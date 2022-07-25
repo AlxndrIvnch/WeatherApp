@@ -28,8 +28,8 @@ class ViewController: UIViewController {
             pagecontrol.numberOfPages = weatherModels.count
             
             let weatherModel = weatherModels.first
-            if let code = weatherModel?.current?.condition?.code {
-                self.view.backgroundColor = BackgroundManager.getColor(with: code)
+            if let code = weatherModel?.current?.condition?.code, let isDay = weatherModel?.current?.is_day == 1 ? true : false {
+                self.view.backgroundColor = BackgroundManager.getColor(with: code, and: isDay)
             }
         }
     }
@@ -145,9 +145,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let index = Int(round(scrollView.contentOffset.x / (scrollView.frame.width)))
         pagecontrol.currentPage = index
         let weatherModel = weatherModels[index]
-        guard let code = weatherModel.current?.condition?.code else { return }
+        guard let code = weatherModel.current?.condition?.code, let isDay = weatherModel.current?.is_day == 1 ? true : false else { return }
         UIView.animate(withDuration: 0.5) {
-            self.view.backgroundColor = BackgroundManager.getColor(with: code)
+            self.view.backgroundColor = BackgroundManager.getColor(with: code, and: isDay)
         }
         
     }
