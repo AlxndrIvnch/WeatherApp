@@ -29,9 +29,14 @@ class HourForecastCell: UICollectionViewCell {
         self.model = hourForecast
         
         if let date = hourForecast.getDate() {
-            let calendar = Calendar.current
-            let hour = calendar.component(.hour, from: date)
-            timeLable.text = hour >= 10 ? String(hour) : "0\(hour)"
+            let hoursString = date.time.hour < 10 ? "0\(date.time.hour)" : "\(date.time.hour)"
+            
+            var minutesString = ""
+            
+            if  date.time.minute > 0 {
+                minutesString = date.time.minute < 10 ? ":0\(date.time.minute)" : ":\(date.time.minute)"
+            }
+            timeLable.text = hoursString + minutesString
         } else {
             timeLable.text = hourForecast.time
         }

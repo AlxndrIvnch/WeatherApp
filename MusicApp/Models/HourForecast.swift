@@ -21,7 +21,6 @@ struct HourForecast: Decodable, Hashable {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         
-        
         guard let time = time else { return nil }
         if let date = dateFormatter.date(from: time) {
             return date
