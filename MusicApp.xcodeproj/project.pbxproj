@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F0C7600288B160700084AAA /* DayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C75FF288B160700084AAA /* DayForecast.swift */; };
+		1F0C7602288B4DF100084AAA /* UINavigatioonController + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C7601288B4DF100084AAA /* UINavigatioonController + extension.swift */; };
+		1F0C7606288B5B8900084AAA /* UvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C7604288B5B8900084AAA /* UvCell.swift */; };
+		1F0C7607288B5B8900084AAA /* UvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0C7605288B5B8900084AAA /* UvCell.xib */; };
+		1F1A57B0288B05B200618250 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A57AE288B05B200618250 /* SearchCell.swift */; };
+		1F1A57B1288B05B200618250 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1A57AF288B05B200618250 /* SearchCell.xib */; };
+		1F28315D288D50AD0063C340 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28315C288D50AD0063C340 /* BackgroundManager.swift */; };
+		1F37D5F728817DC600C25ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37D5F628817DC600C25ECB /* AppDelegate.swift */; };
+		1F37D5F928817DC600C25ECB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37D5F828817DC600C25ECB /* SceneDelegate.swift */; };
+		1F37D5FB28817DC600C25ECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F37D5FA28817DC600C25ECB /* ViewController.swift */; };
+		1F37D5FE28817DC600C25ECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F37D5FC28817DC600C25ECB /* Main.storyboard */; };
+		1F37D60128817DC600C25ECB /* MusicApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F37D5FF28817DC600C25ECB /* MusicApp.xcdatamodeld */; };
+		1F37D60328817DC800C25ECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F37D60228817DC800C25ECB /* Assets.xcassets */; };
+		1F37D60628817DC800C25ECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F37D60428817DC800C25ECB /* LaunchScreen.storyboard */; };
+		1FA22CF1288A0CDE005A7407 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CF0288A0CDE005A7407 /* CoreDataManager.swift */; };
+		1FA22CF4288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CF2288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift */; };
+		1FA22CF5288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CF3288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift */; };
+		1FA22CF7288A26A5005A7407 /* AstroForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CF6288A26A5005A7407 /* AstroForecast.swift */; };
+		1FA22CFA288A2D48005A7407 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CF9288A2D48005A7407 /* Time.swift */; };
+		1FA22CFD288A2D93005A7407 /* Date + extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CFC288A2D92005A7407 /* Date + extension .swift */; };
+		1FA22CFF288A45BE005A7407 /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CFE288A45BE005A7407 /* PreviewVC.swift */; };
+		1FBE7C0E2885FC9D007A3404 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C0C2885FC9D007A3404 /* CollectionViewCell.swift */; };
+		1FBE7C0F2885FC9D007A3404 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBE7C0D2885FC9D007A3404 /* CollectionViewCell.xib */; };
+		1FBE7C1128860D8D007A3404 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C1028860D8D007A3404 /* Forecast.swift */; };
+		1FBE7C1328860E02007A3404 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C1228860E02007A3404 /* Location.swift */; };
+		1FBE7C16288717FA007A3404 /* HourForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C14288717FA007A3404 /* HourForecastCell.swift */; };
+		1FBE7C17288717FA007A3404 /* HourForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBE7C15288717FA007A3404 /* HourForecastCell.xib */; };
+		1FBE7C1B28872380007A3404 /* DayForecastGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C1A28872380007A3404 /* DayForecastGroup.swift */; };
+		1FBE7C1D2887251F007A3404 /* HourForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C1C2887251F007A3404 /* HourForecast.swift */; };
+		1FBE7C2028875519007A3404 /* DayForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C1E28875519007A3404 /* DayForecastCell.swift */; };
+		1FBE7C2128875519007A3404 /* DayForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBE7C1F28875519007A3404 /* DayForecastCell.xib */; };
+		1FBE7C2328875C0E007A3404 /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C2228875C0E007A3404 /* RoundedBackgroundView.swift */; };
+		1FBE7C2528876BBD007A3404 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C2428876BBD007A3404 /* Condition.swift */; };
+		1FBE7C27288779D7007A3404 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C26288779D7007A3404 /* CurrentWeather.swift */; };
+		1FBE7C2A28877D31007A3404 /* CurrentWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C2828877D31007A3404 /* CurrentWeatherCell.swift */; };
+		1FBE7C2B28877D31007A3404 /* CurrentWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBE7C2928877D31007A3404 /* CurrentWeatherCell.xib */; };
+		1FBE7C2E28881B73007A3404 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C2D28881B73007A3404 /* NetworkManager.swift */; };
+		1FBE7C30288822C0007A3404 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C2F288822C0007A3404 /* SearchVC.swift */; };
+		1FBE7C3228884AED007A3404 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C3128884AED007A3404 /* Weather.swift */; };
+		1FBE7C362888544C007A3404 /* SearchResultsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C352888544C007A3404 /* SearchResultsTVC.swift */; };
+		8DF3053C64FAEE4137BF830C /* Pods_MusicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE943F388EEA50B4F2EC154 /* Pods_MusicApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0336B691842A8F0E53D7D3BE /* Pods-MusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1F0C75FF288B160700084AAA /* DayForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecast.swift; sourceTree = "<group>"; };
+		1F0C7601288B4DF100084AAA /* UINavigatioonController + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigatioonController + extension.swift"; sourceTree = "<group>"; };
+		1F0C7604288B5B8900084AAA /* UvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UvCell.swift; sourceTree = "<group>"; };
+		1F0C7605288B5B8900084AAA /* UvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UvCell.xib; sourceTree = "<group>"; };
+		1F1A57AE288B05B200618250 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		1F1A57AF288B05B200618250 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		1F28315C288D50AD0063C340 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
+		1F37D5F328817DC600C25ECB /* MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F37D5F628817DC600C25ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F37D5F828817DC600C25ECB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1F37D5FA28817DC600C25ECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F37D5FD28817DC600C25ECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F37D60028817DC600C25ECB /* MusicApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusicApp.xcdatamodel; sourceTree = "<group>"; };
+		1F37D60228817DC800C25ECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F37D60528817DC800C25ECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1F37D60728817DC800C25ECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FA22CF0288A0CDE005A7407 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		1FA22CF2288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		1FA22CF3288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		1FA22CF6288A26A5005A7407 /* AstroForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstroForecast.swift; sourceTree = "<group>"; };
+		1FA22CF9288A2D48005A7407 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		1FA22CFC288A2D92005A7407 /* Date + extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + extension .swift"; sourceTree = "<group>"; };
+		1FA22CFE288A45BE005A7407 /* PreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
+		1FBE7C0C2885FC9D007A3404 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1FBE7C0D2885FC9D007A3404 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		1FBE7C1028860D8D007A3404 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		1FBE7C1228860E02007A3404 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1FBE7C14288717FA007A3404 /* HourForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourForecastCell.swift; sourceTree = "<group>"; };
+		1FBE7C15288717FA007A3404 /* HourForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourForecastCell.xib; sourceTree = "<group>"; };
+		1FBE7C1A28872380007A3404 /* DayForecastGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastGroup.swift; sourceTree = "<group>"; };
+		1FBE7C1C2887251F007A3404 /* HourForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourForecast.swift; sourceTree = "<group>"; };
+		1FBE7C1E28875519007A3404 /* DayForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastCell.swift; sourceTree = "<group>"; };
+		1FBE7C1F28875519007A3404 /* DayForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayForecastCell.xib; sourceTree = "<group>"; };
+		1FBE7C2228875C0E007A3404 /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
+		1FBE7C2428876BBD007A3404 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		1FBE7C26288779D7007A3404 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		1FBE7C2828877D31007A3404 /* CurrentWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCell.swift; sourceTree = "<group>"; };
+		1FBE7C2928877D31007A3404 /* CurrentWeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentWeatherCell.xib; sourceTree = "<group>"; };
+		1FBE7C2D28881B73007A3404 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1FBE7C2F288822C0007A3404 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		1FBE7C3128884AED007A3404 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		1FBE7C352888544C007A3404 /* SearchResultsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTVC.swift; sourceTree = "<group>"; };
+		6CE943F388EEA50B4F2EC154 /* Pods_MusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30AC2DDF4EB44BCE7397BD8 /* Pods-MusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.release.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F37D5F028817DC600C25ECB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DF3053C64FAEE4137BF830C /* Pods_MusicApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F0C7603288B5B0900084AAA /* Current */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C7604288B5B8900084AAA /* UvCell.swift */,
+				1F0C7605288B5B8900084AAA /* UvCell.xib */,
+			);
+			path = Current;
+			sourceTree = "<group>";
+		};
+		1F37D5EA28817DC600C25ECB = {
+			isa = PBXGroup;
+			children = (
+				1F37D5F528817DC600C25ECB /* MusicApp */,
+				1F37D5F428817DC600C25ECB /* Products */,
+				5DE2FB013A096F5E77DDF4DD /* Pods */,
+				EB5CC988583123A51CCBE4A1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1F37D5F428817DC600C25ECB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F37D5F328817DC600C25ECB /* MusicApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F37D5F528817DC600C25ECB /* MusicApp */ = {
+			isa = PBXGroup;
+			children = (
+				1FA22CFB288A2D66005A7407 /* Extensions */,
+				1FA22CF8288A2D35005A7407 /* Helpers */,
+				1FA22CEC288A0818005A7407 /* Views */,
+				1FBE7C1928871D2F007A3404 /* Cells */,
+				1FBE7C2C28881A65007A3404 /* Managers */,
+				1FBE7C1828871D17007A3404 /* Models */,
+				1FA22CE7288A07E8005A7407 /* CoreDataModels */,
+				1FA22CED288A083B005A7407 /* ViewControllers */,
+				1F37D5F628817DC600C25ECB /* AppDelegate.swift */,
+				1F37D5F828817DC600C25ECB /* SceneDelegate.swift */,
+				1F37D5FC28817DC600C25ECB /* Main.storyboard */,
+				1F37D60228817DC800C25ECB /* Assets.xcassets */,
+				1F37D60428817DC800C25ECB /* LaunchScreen.storyboard */,
+				1F37D60728817DC800C25ECB /* Info.plist */,
+				1F37D5FF28817DC600C25ECB /* MusicApp.xcdatamodeld */,
+			);
+			path = MusicApp;
+			sourceTree = "<group>";
+		};
+		1FA22CE7288A07E8005A7407 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				1FA22CF2288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift */,
+				1FA22CF3288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		1FA22CEC288A0818005A7407 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FBE7C2228875C0E007A3404 /* RoundedBackgroundView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1FA22CED288A083B005A7407 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F37D5FA28817DC600C25ECB /* ViewController.swift */,
+				1FBE7C2F288822C0007A3404 /* SearchVC.swift */,
+				1FBE7C352888544C007A3404 /* SearchResultsTVC.swift */,
+				1FA22CFE288A45BE005A7407 /* PreviewVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1FA22CF8288A2D35005A7407 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1FA22CF9288A2D48005A7407 /* Time.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1FA22CFB288A2D66005A7407 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1FA22CFC288A2D92005A7407 /* Date + extension .swift */,
+				1F0C7601288B4DF100084AAA /* UINavigatioonController + extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1FBE7C1828871D17007A3404 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1FBE7C1028860D8D007A3404 /* Forecast.swift */,
+				1FBE7C1A28872380007A3404 /* DayForecastGroup.swift */,
+				1F0C75FF288B160700084AAA /* DayForecast.swift */,
+				1FBE7C1C2887251F007A3404 /* HourForecast.swift */,
+				1FA22CF6288A26A5005A7407 /* AstroForecast.swift */,
+				1FBE7C1228860E02007A3404 /* Location.swift */,
+				1FBE7C2428876BBD007A3404 /* Condition.swift */,
+				1FBE7C26288779D7007A3404 /* CurrentWeather.swift */,
+				1FBE7C3128884AED007A3404 /* Weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1FBE7C1928871D2F007A3404 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F0C7603288B5B0900084AAA /* Current */,
+				1FBE7C0C2885FC9D007A3404 /* CollectionViewCell.swift */,
+				1FBE7C0D2885FC9D007A3404 /* CollectionViewCell.xib */,
+				1FBE7C14288717FA007A3404 /* HourForecastCell.swift */,
+				1FBE7C15288717FA007A3404 /* HourForecastCell.xib */,
+				1FBE7C1E28875519007A3404 /* DayForecastCell.swift */,
+				1FBE7C1F28875519007A3404 /* DayForecastCell.xib */,
+				1FBE7C2828877D31007A3404 /* CurrentWeatherCell.swift */,
+				1FBE7C2928877D31007A3404 /* CurrentWeatherCell.xib */,
+				1F1A57AE288B05B200618250 /* SearchCell.swift */,
+				1F1A57AF288B05B200618250 /* SearchCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1FBE7C2C28881A65007A3404 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1FBE7C2D28881B73007A3404 /* NetworkManager.swift */,
+				1FA22CF0288A0CDE005A7407 /* CoreDataManager.swift */,
+				1F28315C288D50AD0063C340 /* BackgroundManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5DE2FB013A096F5E77DDF4DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0336B691842A8F0E53D7D3BE /* Pods-MusicApp.debug.xcconfig */,
+				B30AC2DDF4EB44BCE7397BD8 /* Pods-MusicApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB5CC988583123A51CCBE4A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CE943F388EEA50B4F2EC154 /* Pods_MusicApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F37D5F228817DC600C25ECB /* MusicApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F37D60A28817DC800C25ECB /* Build configuration list for PBXNativeTarget "MusicApp" */;
+			buildPhases = (
+				2C576C5E480287DC81110B3A /* [CP] Check Pods Manifest.lock */,
+				1F37D5EF28817DC600C25ECB /* Sources */,
+				1F37D5F028817DC600C25ECB /* Frameworks */,
+				1F37D5F128817DC600C25ECB /* Resources */,
+				69435FBB3A865750D39836D2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicApp;
+			productName = MusicApp;
+			productReference = 1F37D5F328817DC600C25ECB /* MusicApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F37D5EB28817DC600C25ECB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					1F37D5F228817DC600C25ECB = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 1F37D5EE28817DC600C25ECB /* Build configuration list for PBXProject "MusicApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F37D5EA28817DC600C25ECB;
+			productRefGroup = 1F37D5F428817DC600C25ECB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F37D5F228817DC600C25ECB /* MusicApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F37D5F128817DC600C25ECB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F37D60628817DC800C25ECB /* LaunchScreen.storyboard in Resources */,
+				1FBE7C2128875519007A3404 /* DayForecastCell.xib in Resources */,
+				1F37D60328817DC800C25ECB /* Assets.xcassets in Resources */,
+				1FBE7C0F2885FC9D007A3404 /* CollectionViewCell.xib in Resources */,
+				1FBE7C17288717FA007A3404 /* HourForecastCell.xib in Resources */,
+				1F1A57B1288B05B200618250 /* SearchCell.xib in Resources */,
+				1FBE7C2B28877D31007A3404 /* CurrentWeatherCell.xib in Resources */,
+				1F37D5FE28817DC600C25ECB /* Main.storyboard in Resources */,
+				1F0C7607288B5B8900084AAA /* UvCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C576C5E480287DC81110B3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69435FBB3A865750D39836D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicApp/Pods-MusicApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MusicApp/Pods-MusicApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MusicApp/Pods-MusicApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F37D5EF28817DC600C25ECB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FBE7C2028875519007A3404 /* DayForecastCell.swift in Sources */,
+				1F0C7602288B4DF100084AAA /* UINavigatioonController + extension.swift in Sources */,
+				1FBE7C1128860D8D007A3404 /* Forecast.swift in Sources */,
+				1F0C7600288B160700084AAA /* DayForecast.swift in Sources */,
+				1F28315D288D50AD0063C340 /* BackgroundManager.swift in Sources */,
+				1FBE7C0E2885FC9D007A3404 /* CollectionViewCell.swift in Sources */,
+				1F37D5FB28817DC600C25ECB /* ViewController.swift in Sources */,
+				1FBE7C2E28881B73007A3404 /* NetworkManager.swift in Sources */,
+				1FBE7C16288717FA007A3404 /* HourForecastCell.swift in Sources */,
+				1FA22CFA288A2D48005A7407 /* Time.swift in Sources */,
+				1FA22CF5288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift in Sources */,
+				1F0C7606288B5B8900084AAA /* UvCell.swift in Sources */,
+				1FA22CF4288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift in Sources */,
+				1FA22CFF288A45BE005A7407 /* PreviewVC.swift in Sources */,
+				1FA22CF1288A0CDE005A7407 /* CoreDataManager.swift in Sources */,
+				1FBE7C1B28872380007A3404 /* DayForecastGroup.swift in Sources */,
+				1F37D5F728817DC600C25ECB /* AppDelegate.swift in Sources */,
+				1F37D5F928817DC600C25ECB /* SceneDelegate.swift in Sources */,
+				1FBE7C2528876BBD007A3404 /* Condition.swift in Sources */,
+				1F37D60128817DC600C25ECB /* MusicApp.xcdatamodeld in Sources */,
+				1F1A57B0288B05B200618250 /* SearchCell.swift in Sources */,
+				1FBE7C27288779D7007A3404 /* CurrentWeather.swift in Sources */,
+				1FBE7C2328875C0E007A3404 /* RoundedBackgroundView.swift in Sources */,
+				1FA22CFD288A2D93005A7407 /* Date + extension .swift in Sources */,
+				1FBE7C1D2887251F007A3404 /* HourForecast.swift in Sources */,
+				1FBE7C1328860E02007A3404 /* Location.swift in Sources */,
+				1FBE7C3228884AED007A3404 /* Weather.swift in Sources */,
+				1FBE7C30288822C0007A3404 /* SearchVC.swift in Sources */,
+				1FBE7C362888544C007A3404 /* SearchResultsTVC.swift in Sources */,
+				1FBE7C2A28877D31007A3404 /* CurrentWeatherCell.swift in Sources */,
+				1FA22CF7288A26A5005A7407 /* AstroForecast.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1F37D5FC28817DC600C25ECB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F37D5FD28817DC600C25ECB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1F37D60428817DC800C25ECB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F37D60528817DC800C25ECB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F37D60828817DC800C25ECB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1F37D60928817DC800C25ECB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F37D60B28817DC800C25ECB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0336B691842A8F0E53D7D3BE /* Pods-MusicApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ASHWWH7UH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WeatherApp;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.Sashas.MusicApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1F37D60C28817DC800C25ECB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B30AC2DDF4EB44BCE7397BD8 /* Pods-MusicApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ASHWWH7UH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WeatherApp;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.Sashas.MusicApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F37D5EE28817DC600C25ECB /* Build configuration list for PBXProject "MusicApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F37D60828817DC800C25ECB /* Debug */,
+				1F37D60928817DC800C25ECB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F37D60A28817DC800C25ECB /* Build configuration list for PBXNativeTarget "MusicApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F37D60B28817DC800C25ECB /* Debug */,
+				1F37D60C28817DC800C25ECB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F37D5FF28817DC600C25ECB /* MusicApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F37D60028817DC600C25ECB /* MusicApp.xcdatamodel */,
+			);
+			currentVersion = 1F37D60028817DC600C25ECB /* MusicApp.xcdatamodel */;
+			path = MusicApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1F37D5EB28817DC600C25ECB /* Project object */;
+}
