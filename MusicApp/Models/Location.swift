@@ -28,7 +28,7 @@ struct Location: Decodable, Equatable {
     }
     
     static func ==(lhs: Location, rhs: Location) -> Bool {
-        return lhs.lat ?? 0 == rhs.lat ?? 0 && lhs.lon ?? 0 == rhs.lon ?? 0
+        return lhs.getNameRegionCountryString() == rhs.getNameRegionCountryString()
     }
     
     static func fetchFromCoreDataLocations(_ locations: [LocationCoreData]) -> [Location] {

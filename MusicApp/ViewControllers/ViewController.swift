@@ -58,22 +58,26 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         
-        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 180, repeats: true) { [weak self] _ in
             
             guard let self = self else { return }
             
             NetworkManager.groupRequest(for: .forecast, with: self.locations.map({ $0.getNameRegionCountryString() })) { dataArray in
-                
-                for data in dataArray {
-                    guard let data = data else { return }
+
+                self.weatherModels = dataArray.compactMap({ data -> Weather? in
+
+                    guard let data = data else { return nil }
                     do {
                         let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
-                        self.weatherModels.append(weatherModel)
+//                        print(weatherModel.location?.localtime)
+                        return weatherModel
                     } catch {
                         print(error.localizedDescription)
+                        return nil
                     }
-                }
-                print("Updated")
+                })
+//                print()
+
             }
         }
         timer?.fire()
