@@ -43,34 +43,26 @@ class NetworkManager {
             }.resume()
         }
     
-//    static func chainRequest(for type: RequestType, with texts: [String], and language: Language = .ukrainian , handler: @escaping ([Data?]) -> ()) {
-//        var dataArray = [Data?]()
-//        var qs = texts
-//        guard !qs.isEmpty, let url = getUrl(for: type, and: qs.removeFirst(), language: language) else {
-//            handler([Data]())
-//            return
-//        }
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "GET"
-//        request.allHTTPHeaderFields = ["Content-Type": "application/json; Charset=UTF-8"]
-//
-//        AF.request(request).responseData { response in
-//
-//            switch response.result {
-//            case .success(let data):
-//                dataArray.append(data)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//                dataArray.append(nil)
-//            }
-//
-//            NetworkManager.chainRequest(for: type, with: qs) { data in
-//                dataArray.append(contentsOf: data)
-//                handler(dataArray)
-//            }
-//        }.resume()
-//    }
+    static func groupRequest(for type: RequestType, with texts: [String], and language: Language = .ukrainian , handler: @escaping ([Data?]) -> ()) {
+        
+        let dispatchGroup = DispatchGroup()
+        
+        var dataArray = [Data?]()
+        
+        for text in texts {
+            dispatchGroup.enter()
+            
+            request(for: type, with: text) { data in
+                dataArray.append(data)
+                dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            handler(dataArray)
+        }
+        
+    }
     
 }
 

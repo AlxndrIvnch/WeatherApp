@@ -14,27 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var toolbar: UIToolbar!
     var pagecontrol: UIPageControl!
     
-//    lazy var timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
-//        guard let self = self else { return }
-//        for location in self.locations {
-//
-//            NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { [weak self] data in
-//
-//                guard let data = data, let self = self else { return }
-//
-//                do {
-//                    let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
-//                    var array = self.weatherModels
-//                    array.append(weatherModel)
-//                    self.weatherModels = array
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-//        print(Date())
-//    }
-    
     var timer: Timer?
     
     var locations = [Location]()
@@ -83,9 +62,9 @@ class ViewController: UIViewController {
             
             guard let self = self else { return }
             
-            for location in self.locations {
+            NetworkManager.groupRequest(for: .forecast, with: self.locations.map({ $0.getNameRegionCountryString() })) { dataArray in
                 
-                NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { data in
+                for data in dataArray {
                     guard let data = data else { return }
                     do {
                         let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
@@ -94,6 +73,7 @@ class ViewController: UIViewController {
                         print(error.localizedDescription)
                     }
                 }
+                print("Updated")
             }
         }
         timer?.fire()
