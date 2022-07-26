@@ -14,8 +14,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var toolbar: UIToolbar!
     var pagecontrol: UIPageControl!
     
+//    lazy var timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+//        guard let self = self else { return }
+//        for location in self.locations {
+//
+//            NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { [weak self] data in
+//
+//                guard let data = data, let self = self else { return }
+//
+//                do {
+//                    let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
+//                    var array = self.weatherModels
+//                    array.append(weatherModel)
+//                    self.weatherModels = array
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
+//        print(Date())
+//    }
+    
+    var timer: Timer?
+    
     var locations = [Location]()
-  
+    
     var weatherModels = [Weather]() {
         didSet {
             
@@ -27,8 +50,10 @@ class ViewController: UIViewController {
             collectionView.reloadData()
             pagecontrol.numberOfPages = weatherModels.count
             
+            guard view.backgroundColor == .black else { return }
             let weatherModel = weatherModels.first
-            if let code = weatherModel?.current?.condition?.code, let isDay = weatherModel?.current?.is_day == 1 ? true : false {
+            if let code = weatherModel?.current?.condition?.code {
+                let isDay = weatherModel?.current?.is_day == 1 ? true : false
                 self.view.backgroundColor = BackgroundManager.getColor(with: code, and: isDay)
             }
         }
@@ -47,37 +72,42 @@ class ViewController: UIViewController {
         
         if locations.isEmpty {
             goToSearchVC()
-            
-        } else {
-            for location in locations {
-                
-                NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { [weak self] data in
-                    
-                    guard let data = data, let self = self else { return }
-                    
-                    do {
-                        let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
-                        var array = self.weatherModels
-                        array.append(weatherModel)
-                        self.weatherModels = array
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         
+        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+            
+            guard let self = self else { return }
+            
+            for location in self.locations {
+                
+                NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { data in
+                    guard let data = data else { return }
+                    do {
+                        let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
+                        self.weatherModels.append(weatherModel)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+        timer?.fire()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
+        timer?.invalidate()
+    }
+    
+    func setup(with models: [Weather], and locations: [Location]) {
+        self.locations = locations
+        self.weatherModels = models
     }
     
     private func setupPagecontrol() {
@@ -145,8 +175,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let index = Int(round(scrollView.contentOffset.x / (scrollView.frame.width)))
         pagecontrol.currentPage = index
         let weatherModel = weatherModels[index]
-        guard let code = weatherModel.current?.condition?.code, let isDay = weatherModel.current?.is_day == 1 ? true : false else { return }
-        UIView.animate(withDuration: 0.5) {
+        guard let code = weatherModel.current?.condition?.code else { return }
+        let isDay = weatherModel.current?.is_day == 1 ? true : false
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut]) {
             self.view.backgroundColor = BackgroundManager.getColor(with: code, and: isDay)
         }
         

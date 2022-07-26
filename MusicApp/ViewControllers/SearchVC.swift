@@ -227,7 +227,9 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         
         let weatherModel = mainVC.weatherModels[indexPath.row]
         
-        if let code = weatherModel.current?.condition?.code, let isDay = weatherModel.current?.is_day == 1 ? true : false {
+        if let code = weatherModel.current?.condition?.code {
+            let isDay = weatherModel.current?.is_day == 1 ? true : false
+            
             mainVC.view.backgroundColor = BackgroundManager.getColor(with: code, and: isDay)
         }
         
