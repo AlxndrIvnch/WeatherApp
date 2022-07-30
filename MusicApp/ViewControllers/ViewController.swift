@@ -111,7 +111,7 @@ class ViewController: UIViewController {
         
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let list = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(goToSearchVC))
-        let map = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: nil)
+        let map = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(goToMapVC))
         let pagecontrol = UIBarButtonItem(customView: pagecontrol)
         
         let items: [UIBarButtonItem] = [map, space, pagecontrol, space, list]
@@ -133,6 +133,13 @@ class ViewController: UIViewController {
         vc.mainVC = self
         vc.setup(with: weatherModels)
         navigationController?.customPushFromRight(vc)
+    }
+    
+    @objc private func goToMapVC() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MapVC") as! MapVC
+        vc.mainVC = self
+        vc.setup(with: weatherModels)
+        navigationController?.present(vc, animated: true)
     }
 }
 

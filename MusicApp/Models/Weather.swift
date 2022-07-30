@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct Weather: Decodable {
     let location: Location?

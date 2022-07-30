@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import MapKit
 
 struct Location: Decodable, Equatable {
     let name: String?
@@ -55,6 +56,11 @@ struct Location: Decodable, Equatable {
         guard let dateString = localtime else { return nil }
         let date = dateFormatter.date(from: dateString)
         return date
+    }
+    
+    func getCLLocation() -> CLLocationCoordinate2D? {
+        guard let latitude = self.lat, let longitude = self.lon else { return nil }
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
 }

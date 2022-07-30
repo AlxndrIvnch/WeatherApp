@@ -124,6 +124,7 @@
             <connections>
                 <outlet property="containerView" destination="CYz-eN-IvS" id="W7C-eJ-sUF"/>
                 <outlet property="descriptionLable" destination="kcn-5q-7U4" id="0tS-gL-qCf"/>
+                <outlet property="progressView" destination="iXZ-ly-bTx" id="jFh-fC-1vf"/>
                 <outlet property="uvLable" destination="nIP-Pi-vaK" id="WWV-1s-D2J"/>
             </connections>
             <point key="canvasLocation" x="218.11594202898553" y="143.30357142857142"/>

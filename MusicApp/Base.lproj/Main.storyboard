@@ -8,6 +8,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--MapVC-->
+        <scene sceneID="OVx-pp-crO">
+            <objects>
+                <viewController storyboardIdentifier="MapVC" modalPresentationStyle="overFullScreen" id="OaI-14-avQ" customClass="MapVC" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fvf-2T-5FC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e2y-08-eDW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLt-N5-jfw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub8-Mt-f1I">
+                                <rect key="frame" x="10" y="54" width="71" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Done">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseBackgroundColor" white="0.33333333333333331" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="OaI-14-avQ" eventType="touchUpInside" id="Aig-cJ-sAg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xvJ-7i-8LI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zLt-N5-jfw" firstAttribute="top" secondItem="fvf-2T-5FC" secondAttribute="top" id="41V-I8-a4x"/>
+                            <constraint firstItem="xvJ-7i-8LI" firstAttribute="trailing" secondItem="e2y-08-eDW" secondAttribute="trailing" id="Bfa-u3-3El"/>
+                            <constraint firstItem="xvJ-7i-8LI" firstAttribute="trailing" secondItem="zLt-N5-jfw" secondAttribute="trailing" id="Fmf-mG-dCj"/>
+                            <constraint firstItem="e2y-08-eDW" firstAttribute="leading" secondItem="xvJ-7i-8LI" secondAttribute="leading" id="URk-ee-tER"/>
+                            <constraint firstItem="xvJ-7i-8LI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ub8-Mt-f1I" secondAttribute="trailing" symbolic="YES" id="dMs-SC-XK1"/>
+                            <constraint firstItem="zLt-N5-jfw" firstAttribute="leading" secondItem="xvJ-7i-8LI" secondAttribute="leading" id="f97-9j-0uh"/>
+                            <constraint firstItem="Ub8-Mt-f1I" firstAttribute="leading" secondItem="xvJ-7i-8LI" secondAttribute="leading" constant="10" id="i8y-cB-kvp"/>
+                            <constraint firstItem="xvJ-7i-8LI" firstAttribute="top" secondItem="zLt-N5-jfw" secondAttribute="bottom" id="ipb-pu-bFt"/>
+                            <constraint firstItem="Ub8-Mt-f1I" firstAttribute="top" secondItem="xvJ-7i-8LI" secondAttribute="top" constant="10" id="n42-qZ-G2r"/>
+                            <constraint firstAttribute="bottom" secondItem="e2y-08-eDW" secondAttribute="bottom" id="oNh-bo-JHc"/>
+                            <constraint firstItem="e2y-08-eDW" firstAttribute="top" secondItem="fvf-2T-5FC" secondAttribute="top" id="q9J-B3-lgi"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="doneButton" destination="Ub8-Mt-f1I" id="e6G-Ql-HGf"/>
+                        <outlet property="mapView" destination="e2y-08-eDW" id="eSX-RZ-Sc7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skV-L1-FvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146.37681159420291" y="75"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -142,7 +195,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wR-8L-p3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="75"/>
+            <point key="canvasLocation" x="945" y="-704"/>
         </scene>
     </scenes>
     <resources>

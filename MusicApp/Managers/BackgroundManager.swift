@@ -36,7 +36,7 @@ class BackgroundManager {
         case 1210...1219: return isDay ? #colorLiteral(red: 0.7913018438, green: 1, blue: 0.9467291958, alpha: 1) : #colorLiteral(red: 0.4461912308, green: 0.5659722222, blue: 0.5392361113, alpha: 1)
         case 1222...1225: return isDay ? #colorLiteral(red: 0.6820450605, green: 0.7415351161, blue: 0.8476957071, alpha: 1) : #colorLiteral(red: 0.4626006657, green: 0.5034308929, blue: 0.579782197, alpha: 1)
         case 1237: return isDay ? #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1) : #colorLiteral(red: 0.1432514697, green: 0.001991485951, blue: 0.5826481815, alpha: 1)
-        case 1240: return isDay ? #colorLiteral(red: 0.4629999995, green: 0.4629999995, blue: 0.5019999743, alpha: 0.4) : #colorLiteral(red: 0.318173979, green: 0.3180579107, blue: 0.3453554036, alpha: 0.4)
+        case 1240: return isDay ? #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1) : #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
         case 1243, 1252, 1258, 1264, 1276, 1282: return isDay ? #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1) : #colorLiteral(red: 0.1580940348, green: 0.002197827707, blue: 0.6430174997, alpha: 1)
         case 1246, 1249, 1261, 1273, 1279: return isDay ? #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1) : #colorLiteral(red: 0.03938358853, green: 0.1236658719, blue: 0.1713012479, alpha: 1)
         default: return isDay ? #colorLiteral(red: 0.202882173, green: 0.4286299599, blue: 0.787244704, alpha: 1) : #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)

@@ -14,6 +14,7 @@ class UvCell: UICollectionViewCell {
     @IBOutlet weak var uvLable: UILabel!
     @IBOutlet weak var descriptionLable: UILabel!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var model: CurrentWeather!
     
@@ -27,7 +28,9 @@ class UvCell: UICollectionViewCell {
     func setup(with model: CurrentWeather) {
         self.model = model
         uvLable.text = String(model.uv ?? 0)
-        descriptionLable.text = uvLevel(model.uv ?? -1)
+        descriptionLable.text = uvLevel(model.uv)
+        progressView.progress = Float(model.uv ?? 0) / 12
+        progressView.progressTintColor = uvColoe(model.uv)
     }
     
     private func uvLevel(_ uv: Int?) -> String? {
@@ -40,6 +43,19 @@ class UvCell: UICollectionViewCell {
         case 6...7: return "High"
         case 8...10: return "Very high"
         default: return "Excessive"
+        }
+    }
+    
+    private func uvColoe(_ uv: Int?) -> UIColor {
+            
+        guard uv ?? -1 >= 0 else { return .link }
+
+        switch uv! {
+        case 0...2: return .green
+        case 3...5: return .yellow
+        case 6...7: return .orange
+        case 8...10: return .red
+        default: return .purple
         }
     }
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0AEEE4289374BA00238F3C /* CLLocationCoordinate2D + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0AEEE3289374BA00238F3C /* CLLocationCoordinate2D + extension.swift */; };
+		1F0AEEE628943B9400238F3C /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0AEEE528943B9400238F3C /* UIImage + extension.swift */; };
+		1F0AEEE828957FAE00238F3C /* Int + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0AEEE728957FAE00238F3C /* Int + extension.swift */; };
 		1F0C7600288B160700084AAA /* DayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C75FF288B160700084AAA /* DayForecast.swift */; };
 		1F0C7602288B4DF100084AAA /* UINavigatioonController + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C7601288B4DF100084AAA /* UINavigatioonController + extension.swift */; };
 		1F0C7606288B5B8900084AAA /* UvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C7604288B5B8900084AAA /* UvCell.swift */; };
@@ -21,6 +24,7 @@
 		1F37D60128817DC600C25ECB /* MusicApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F37D5FF28817DC600C25ECB /* MusicApp.xcdatamodeld */; };
 		1F37D60328817DC800C25ECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F37D60228817DC800C25ECB /* Assets.xcassets */; };
 		1F37D60628817DC800C25ECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F37D60428817DC800C25ECB /* LaunchScreen.storyboard */; };
+		1F92FC442891FB98004F20C5 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92FC432891FB98004F20C5 /* MapVC.swift */; };
 		1FA22CF1288A0CDE005A7407 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CF0288A0CDE005A7407 /* CoreDataManager.swift */; };
 		1FA22CF4288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CF2288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift */; };
 		1FA22CF5288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA22CF3288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift */; };
@@ -52,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		0336B691842A8F0E53D7D3BE /* Pods-MusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1F0AEEE3289374BA00238F3C /* CLLocationCoordinate2D + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D + extension.swift"; sourceTree = "<group>"; };
+		1F0AEEE528943B9400238F3C /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
+		1F0AEEE728957FAE00238F3C /* Int + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + extension.swift"; sourceTree = "<group>"; };
 		1F0C75FF288B160700084AAA /* DayForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecast.swift; sourceTree = "<group>"; };
 		1F0C7601288B4DF100084AAA /* UINavigatioonController + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigatioonController + extension.swift"; sourceTree = "<group>"; };
 		1F0C7604288B5B8900084AAA /* UvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UvCell.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		1F37D60228817DC800C25ECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F37D60528817DC800C25ECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F37D60728817DC800C25ECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F92FC432891FB98004F20C5 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		1FA22CF0288A0CDE005A7407 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1FA22CF2288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		1FA22CF3288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -183,6 +191,7 @@
 				1FBE7C2F288822C0007A3404 /* SearchVC.swift */,
 				1FBE7C352888544C007A3404 /* SearchResultsTVC.swift */,
 				1FA22CFE288A45BE005A7407 /* PreviewVC.swift */,
+				1F92FC432891FB98004F20C5 /* MapVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +209,9 @@
 			children = (
 				1FA22CFC288A2D92005A7407 /* Date + extension .swift */,
 				1F0C7601288B4DF100084AAA /* UINavigatioonController + extension.swift */,
+				1F0AEEE3289374BA00238F3C /* CLLocationCoordinate2D + extension.swift */,
+				1F0AEEE528943B9400238F3C /* UIImage + extension.swift */,
+				1F0AEEE728957FAE00238F3C /* Int + extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBE7C2028875519007A3404 /* DayForecastCell.swift in Sources */,
+				1F0AEEE4289374BA00238F3C /* CLLocationCoordinate2D + extension.swift in Sources */,
 				1F0C7602288B4DF100084AAA /* UINavigatioonController + extension.swift in Sources */,
 				1FBE7C1128860D8D007A3404 /* Forecast.swift in Sources */,
 				1F0C7600288B160700084AAA /* DayForecast.swift in Sources */,
@@ -396,6 +409,7 @@
 				1FBE7C2E28881B73007A3404 /* NetworkManager.swift in Sources */,
 				1FBE7C16288717FA007A3404 /* HourForecastCell.swift in Sources */,
 				1FA22CFA288A2D48005A7407 /* Time.swift in Sources */,
+				1F92FC442891FB98004F20C5 /* MapVC.swift in Sources */,
 				1FA22CF5288A19ED005A7407 /* LocationCoreData+CoreDataProperties.swift in Sources */,
 				1F0C7606288B5B8900084AAA /* UvCell.swift in Sources */,
 				1FA22CF4288A19ED005A7407 /* LocationCoreData+CoreDataClass.swift in Sources */,
@@ -411,11 +425,13 @@
 				1FBE7C2328875C0E007A3404 /* RoundedBackgroundView.swift in Sources */,
 				1FA22CFD288A2D93005A7407 /* Date + extension .swift in Sources */,
 				1FBE7C1D2887251F007A3404 /* HourForecast.swift in Sources */,
+				1F0AEEE628943B9400238F3C /* UIImage + extension.swift in Sources */,
 				1FBE7C1328860E02007A3404 /* Location.swift in Sources */,
 				1FBE7C3228884AED007A3404 /* Weather.swift in Sources */,
 				1FBE7C30288822C0007A3404 /* SearchVC.swift in Sources */,
 				1FBE7C362888544C007A3404 /* SearchResultsTVC.swift in Sources */,
 				1FBE7C2A28877D31007A3404 /* CurrentWeatherCell.swift in Sources */,
+				1F0AEEE828957FAE00238F3C /* Int + extension.swift in Sources */,
 				1FA22CF7288A26A5005A7407 /* AstroForecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

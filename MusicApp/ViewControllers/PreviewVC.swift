@@ -14,6 +14,7 @@ class PreviewVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     weak var searchVC: SearchVC?
+    weak var mapVC: MapVC?
     
     var weatherModel: Weather! {
         didSet {
@@ -54,6 +55,22 @@ class PreviewVC: UIViewController {
         }
     }
     
+    func setup(with coordinates: String) {
+
+        NetworkManager.request(for: .forecast, with: coordinates) { [weak self] data in
+            guard let data = data else { return }
+            do {
+                let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
+                self?.weatherModel = weatherModel
+                if !(self?.mapVC?.weatherModels.contains(where: { $0.location == weatherModel.location }) ?? true) {
+                    self?.navItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self?.addLocation))
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     @objc func dismissSelf() {
         self.dismiss(animated: true)
     }
@@ -69,6 +86,12 @@ class PreviewVC: UIViewController {
         searchVC?.searchController.searchBar.text?.removeAll()
         searchVC?.dismiss(animated: false)
         searchVC?.searchController.searchBar.searchTextField.resignFirstResponder()
+        
+        mapVC?.weatherModels.append(weatherModel)
+        if let coordinates = weatherModel.location?.getCLLocation() {
+            guard let annotation = mapVC?.addPin(with: weatherModel.location?.name, and: coordinates) else { return }
+            mapVC?.mapView.selectAnnotation(annotation, animated: false)
+        }
         
         self.dismiss(animated: true)
         
