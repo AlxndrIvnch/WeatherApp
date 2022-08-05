@@ -89,8 +89,9 @@ class PreviewVC: UIViewController {
         
         mapVC?.weatherModels.append(weatherModel)
         if let coordinates = weatherModel.location?.getCLLocation() {
-            guard let annotation = mapVC?.addPin(with: weatherModel.location?.name, and: coordinates) else { return }
-            mapVC?.mapView.selectAnnotation(annotation, animated: false)
+            if let annotation = mapVC?.addPin(with: weatherModel.location?.name, and: coordinates) {
+                mapVC?.mapView.selectAnnotation(annotation, animated: false)
+            }
         }
         
         self.dismiss(animated: true)

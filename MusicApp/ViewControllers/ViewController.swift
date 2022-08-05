@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var toolbar: UIToolbar!
-    var pagecontrol: UIPageControl!
+    var pageControl: UIPageControl!
     
     var timer: Timer?
     
@@ -25,9 +25,9 @@ class ViewController: UIViewController {
                 let weatherModel = weatherModels.first { $0.location == location }
                 return weatherModel
             }
-            
+             
             collectionView.reloadData()
-            pagecontrol.numberOfPages = weatherModels.count
+            pageControl.numberOfPages = weatherModels.count
             
             guard view.backgroundColor == .black else { return }
             let weatherModel = weatherModels.first
@@ -58,6 +58,8 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         
+        print(pageControl.currentPage)
+        
         timer = Timer.scheduledTimer(withTimeInterval: 180, repeats: true) { [weak self] _ in
             
             guard let self = self else { return }
@@ -69,14 +71,12 @@ class ViewController: UIViewController {
                     guard let data = data else { return nil }
                     do {
                         let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
-//                        print(weatherModel.location?.localtime)
                         return weatherModel
                     } catch {
                         print(error.localizedDescription)
                         return nil
                     }
                 })
-//                print()
 
             }
         }
@@ -95,9 +95,9 @@ class ViewController: UIViewController {
     }
     
     private func setupPagecontrol() {
-        pagecontrol = UIPageControl(frame: CGRect(origin: .zero, size: CGSize(width: view.frame.width / 2, height: 1)))
-        pagecontrol.hidesForSinglePage = true
-        pagecontrol.addTarget(self, action: #selector(pageControlTapped), for: .valueChanged)
+        pageControl = UIPageControl(frame: CGRect(origin: .zero, size: CGSize(width: view.frame.width / 2, height: 1)))
+        pageControl.hidesForSinglePage = true
+        pageControl.addTarget(self, action: #selector(pageControlTapped), for: .valueChanged)
     }
     
     private func setupCollectionView() {
@@ -112,7 +112,7 @@ class ViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let list = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(goToSearchVC))
         let map = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(goToMapVC))
-        let pagecontrol = UIBarButtonItem(customView: pagecontrol)
+        let pagecontrol = UIBarButtonItem(customView: pageControl)
         
         let items: [UIBarButtonItem] = [map, space, pagecontrol, space, list]
         
@@ -164,7 +164,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let index = Int(round(scrollView.contentOffset.x / (scrollView.frame.width)))
-        pagecontrol.currentPage = index
+        pageControl.currentPage = index
         let weatherModel = weatherModels[index]
         guard let code = weatherModel.current?.condition?.code else { return }
         let isDay = weatherModel.current?.is_day == 1 ? true : false

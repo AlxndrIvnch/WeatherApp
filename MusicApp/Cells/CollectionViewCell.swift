@@ -17,7 +17,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cityNameLable: UILabel!
     @IBOutlet weak var degreeLable: UILabel!
-    @IBOutlet weak var disciptionLable: UILabel!
+    @IBOutlet weak var desciptionLable: UILabel!
     @IBOutlet weak var symbolLable: UILabel!
     
     @IBOutlet weak var headerViewHight: NSLayoutConstraint!
@@ -72,9 +72,9 @@ class CollectionViewCell: UICollectionViewCell {
         symbolLable.font = UIFont.systemFont(ofSize: headerHight / 3, weight: .light)
         symbolLable.textColor = .white
         
-        disciptionLable.text = "\(weatherModel?.current?.condition?.text ?? "")\nMax: 27°, min: 14°"
-        disciptionLable.font = UIFont.systemFont(ofSize: headerHight / 15, weight: .light)
-        disciptionLable.textColor = .white
+        desciptionLable.text = "\(weatherModel?.current?.condition?.text ?? "")\nMax: 27°, min: 14°"
+        desciptionLable.font = UIFont.systemFont(ofSize: headerHight / 15, weight: .light)
+        desciptionLable.textColor = .white
         
     }
     
@@ -275,8 +275,6 @@ extension CollectionViewCell: UICollectionViewDelegate {
         
         let offset = collectionView.contentOffset.y
         
-        guard offset < headerHight else { return }
-        
         let decreaseAlphaMin: CGFloat = 60
         let decreaseAlphaMax: CGFloat = 160
         let increaseAlphaMax: CGFloat = 180
@@ -286,6 +284,16 @@ extension CollectionViewCell: UICollectionViewDelegate {
         degreeLable.text = offset <= 160 ? "\(Int(weatherModel?.current?.temp_c ?? 0))" : "\(Int(weatherModel?.current?.temp_c ?? 0))° | \(weatherModel?.current?.condition?.text ?? "")"
         degreeLable.font = offset <= 160 ? UIFont.systemFont(ofSize: headerHight / 3, weight: .light) : UIFont.systemFont(ofSize: 16, weight: .light)
         
+        symbolLable.isHidden = offset >= headerHight
+        desciptionLable.isHidden = offset >= headerHight
+        
+        guard offset < headerHight else {
+            degreeLable.textColor = .white.withAlphaComponent(1)
+            collectionViewTopConstraint.constant = collectionViewTopConstant - moveCollectionViewMax
+            headerViewHight.constant = headerHight - decreaseAlphaMin * 0.5
+            return
+        }
+        
         if offset >= moveCollectionViewMin, offset <= moveCollectionViewMax  { //move collectionView
             self.collectionViewTopConstraint.constant = self.collectionViewTopConstant - offset
             
@@ -293,7 +301,7 @@ extension CollectionViewCell: UICollectionViewDelegate {
         } else {
             self.degreeLable.textColor = offset < moveCollectionViewMin ? .white.withAlphaComponent(1) : .white.withAlphaComponent(0)
             self.symbolLable.textColor = offset < moveCollectionViewMin ? .white.withAlphaComponent(1) : .white.withAlphaComponent(0)
-            self.disciptionLable.textColor = offset < moveCollectionViewMin ? .white.withAlphaComponent(1) : .white.withAlphaComponent(0)
+            self.desciptionLable.textColor = offset < moveCollectionViewMin ? .white.withAlphaComponent(1) : .white.withAlphaComponent(0)
         }
         
         if offset > moveCollectionViewMax {
@@ -309,14 +317,14 @@ extension CollectionViewCell: UICollectionViewDelegate {
             
             self.symbolLable.textColor = .white.withAlphaComponent(alpha)
             self.degreeLable.textColor = .white.withAlphaComponent(alpha)
-            self.disciptionLable.textColor = .white.withAlphaComponent(alpha)
+            self.desciptionLable.textColor = .white.withAlphaComponent(alpha)
             
         }
         
         if offset > decreaseAlphaMax {
             let alpha = offset <= increaseAlphaMax ? ((offset - decreaseAlphaMax) / (increaseAlphaMax - decreaseAlphaMax)) :  1
             
-            self.disciptionLable.textColor = .white.withAlphaComponent(0)
+            self.desciptionLable.textColor = .white.withAlphaComponent(0)
             self.degreeLable.textColor = .white.withAlphaComponent(alpha)
             
         }

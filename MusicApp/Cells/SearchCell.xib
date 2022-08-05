@@ -22,6 +22,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kropivnitsky" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xif-11-fK2">
                                 <rect key="frame" x="15" y="15" width="127" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="M41-Ga-ZmW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="dddddddddd dddddddd dddddd" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw2-ep-gmM">
-                                <rect key="frame" x="15" y="39" width="137" height="61"/>
+                                <rect key="frame" x="15" y="59" width="149" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,8 +59,9 @@
                             <constraint firstItem="Xif-11-fK2" firstAttribute="leading" secondItem="f7W-7g-dh7" secondAttribute="leading" constant="15" id="T0X-ip-pIF"/>
                             <constraint firstItem="6fA-Ea-j17" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xif-11-fK2" secondAttribute="trailing" constant="10" id="hrZ-jc-32d"/>
                             <constraint firstAttribute="trailing" secondItem="dGt-nU-QM8" secondAttribute="trailing" constant="15" id="iVW-et-2i7"/>
-                            <constraint firstItem="dGt-nU-QM8" firstAttribute="leading" secondItem="Mw2-ep-gmM" secondAttribute="trailing" constant="20" id="lnV-09-aBf"/>
+                            <constraint firstItem="dGt-nU-QM8" firstAttribute="leading" secondItem="Mw2-ep-gmM" secondAttribute="trailing" constant="8" id="lnV-09-aBf"/>
                             <constraint firstAttribute="bottom" secondItem="Mw2-ep-gmM" secondAttribute="bottom" constant="15" id="vdm-lf-SYG"/>
+                            <constraint firstItem="Mw2-ep-gmM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Xif-11-fK2" secondAttribute="bottom" id="xAL-DL-VSU"/>
                             <constraint firstItem="Xif-11-fK2" firstAttribute="top" secondItem="f7W-7g-dh7" secondAttribute="top" constant="15" id="xLy-qH-LDm"/>
                             <constraint firstItem="6fA-Ea-j17" firstAttribute="top" secondItem="f7W-7g-dh7" secondAttribute="top" constant="15" id="xxW-Ux-aBP"/>
                         </constraints>

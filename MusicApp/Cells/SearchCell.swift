@@ -40,7 +40,7 @@ class SearchCell: UITableViewCell {
         
         cityNameLable.text = weatherModel.location?.name
         descriptionLable.text = weatherModel.current?.condition?.text
-        minMaxTempLable.text = "Max.: \(Int(weatherModel.forecast?.forecastday?.first?.day?.maxtemp_c ?? 0))°, min.: \(Int(weatherModel.forecast?.forecastday?.first?.day?.mintemp_c ?? 0))°"
+        minMaxTempLable.text = "Max: \(Int(weatherModel.forecast?.forecastday?.first?.day?.maxtemp_c ?? 0))°, min: \(Int(weatherModel.forecast?.forecastday?.first?.day?.mintemp_c ?? 0))°"
         tempLable.text = "\((weatherModel.current?.temp_c ?? 0))°"
     }
     

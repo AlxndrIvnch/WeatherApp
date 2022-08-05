@@ -223,17 +223,15 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         
         mainVC.locations = self.weatherModels.compactMap { $0.location }
         mainVC.weatherModels = self.weatherModels
-        mainVC.pagecontrol.currentPage = indexPath.row
+        mainVC.collectionView.scrollToItem(at: IndexPath(row: indexPath.row, section: 0), at: .centeredHorizontally, animated: false)
         
         let weatherModel = mainVC.weatherModels[indexPath.row]
         
         if let code = weatherModel.current?.condition?.code {
             let isDay = weatherModel.current?.is_day == 1 ? true : false
-            
             mainVC.view.backgroundColor = BackgroundManager.getColor(with: code, and: isDay)
         }
         
-        mainVC.collectionView.scrollToItem(at: IndexPath(row: indexPath.row, section: 0), at: .centeredHorizontally, animated: false)
         navigationController?.customPop()
     }
     

@@ -90,7 +90,7 @@
                 <outlet property="collectionView" destination="elE-81-YIX" id="etb-3T-3b8"/>
                 <outlet property="collectionViewTopConstraint" destination="zYb-vj-FtV" id="eYa-z4-Rdh"/>
                 <outlet property="degreeLable" destination="psD-9J-nLC" id="Awt-WL-1hl"/>
-                <outlet property="disciptionLable" destination="VQP-pP-f8q" id="fMs-51-YrP"/>
+                <outlet property="desciptionLable" destination="VQP-pP-f8q" id="bca-4y-3f5"/>
                 <outlet property="headerViewHight" destination="cSK-Dh-siB" id="T7E-k4-CHX"/>
                 <outlet property="symbolLable" destination="20M-bR-bee" id="JZp-Wp-vBT"/>
                 <outlet property="topLableVerticalConstraint" destination="4e5-j6-yeK" id="EpW-Fa-qHK"/>

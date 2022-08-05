@@ -37,7 +37,6 @@ class MapVC: UIViewController {
         if let selectedAnnotation = mapView.selectedAnnotations.first, let weatherModel = weatherModels.first(where:{ selectedAnnotation.coordinate == $0.location?.getCLLocation() ?? CLLocationCoordinate2D(latitude: 0, longitude: 0) })  {
             
             if let index = weatherModels.firstIndex(where: { $0.location == weatherModel.location }) {
-                mainVC.pagecontrol.currentPage = index
                 mainVC.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: false)
             }
             if let code = weatherModel.current?.condition?.code {
@@ -66,7 +65,7 @@ class MapVC: UIViewController {
         pointAnnotation.coordinate = coordinates
         mapView.addAnnotation(pointAnnotation)
         
-        if coordinates == weatherModels[mainVC.pagecontrol.currentPage].location?.getCLLocation() {
+        if coordinates == weatherModels[mainVC.pageControl.currentPage].location?.getCLLocation() {
             mapView.selectAnnotation(pointAnnotation, animated: true)
             mapView.setRegion(MKCoordinateRegion(center: pointAnnotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)), animated: true)
         }
