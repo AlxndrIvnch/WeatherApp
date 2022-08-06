@@ -1,6 +1,7 @@
 import UIKit
 import MapKit
 import CoreLocationUI
+import AVFoundation
 
 class MapVC: UIViewController {
     
@@ -152,6 +153,10 @@ class MapVC: UIViewController {
     
     @objc func longPressGestureRecognized(_ sender: UIGestureRecognizer) {
         if sender.state == .began {
+            
+            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+            AudioServicesPlaySystemSound(1306)
+            
             let locationInView = sender.location(in: mapView)
             let coordinates = mapView.convert(locationInView, toCoordinateFrom: mapView)
             
