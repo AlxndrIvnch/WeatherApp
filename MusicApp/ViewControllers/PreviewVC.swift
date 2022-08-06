@@ -42,12 +42,12 @@ class PreviewVC: UIViewController {
     func setup(with location: Location) {
 
         NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { [weak self] data in
-            guard let data = data else { return }
+            guard let data = data, let self = self else { return }
             do {
                 let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
-                self?.weatherModel = weatherModel
-                if !(self?.searchVC?.weatherModels.contains(where: { $0.location == weatherModel.location }) ?? true) {
-                    self?.navItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self?.addLocation))
+                self.weatherModel = weatherModel
+                if !(self.searchVC?.weatherModels.contains(where: { $0.location == weatherModel.location }) ?? true) {
+                    self.navItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addLocation))
                 }
             } catch {
                 print(error.localizedDescription)
@@ -56,15 +56,26 @@ class PreviewVC: UIViewController {
     }
     
     func setup(with coordinates: String) {
-
         NetworkManager.request(for: .forecast, with: coordinates) { [weak self] data in
-            guard let data = data else { return }
+            guard let data = data, let self = self else { return }
             do {
                 let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
-                self?.weatherModel = weatherModel
-                if !(self?.mapVC?.weatherModels.contains(where: { $0.location == weatherModel.location }) ?? true) {
-                    self?.navItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self?.addLocation))
+                
+                guard let location = weatherModel.location else { return }
+                
+                NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { data in
+                    guard let data = data else { return }
+                    do {
+                        let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
+                        self.weatherModel = weatherModel
+                        if !(self.mapVC?.weatherModels.contains(where: { $0.location == weatherModel.location }) ?? true) {
+                            self.navItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addLocation))
+                        }
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
+
             } catch {
                 print(error.localizedDescription)
             }

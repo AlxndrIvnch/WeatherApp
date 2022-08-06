@@ -1,17 +1,14 @@
-//
-//  MapVC.swift
-//  MusicApp
-//
-//  Created by Aleksandr on 28.07.2022.
-//
-
 import UIKit
 import MapKit
+import CoreLocationUI
 
 class MapVC: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var doneButton: UIButton!
+    var locationButton: CLLocationButton!
+    
+    let locationManager = CLLocationManager()
     
     var weatherModels: [Weather]!
     
@@ -19,6 +16,8 @@ class MapVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupLocationButton()
         
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "MKAnnotationView")
         
@@ -29,6 +28,11 @@ class MapVC: UIViewController {
         longpress.minimumPressDuration = 0.5
         mapView.addGestureRecognizer(longpress)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkLocationEnabled()
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
@@ -48,8 +52,81 @@ class MapVC: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @objc func locationButtonTapped() {
+        mapView.setRegion(MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)), animated: true)
+    }
+    
     func setup(with weatherModels: [Weather]) {
         self.weatherModels = weatherModels
+    }
+    
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        checkAutorization()
+    }
+    
+    func setupLocationButton() {
+        locationButton = CLLocationButton()
+        view.addSubview(locationButton)
+        locationButton.translatesAutoresizingMaskIntoConstraints = false
+        locationButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        locationButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+        locationButton.cornerRadius = 10
+        locationButton.icon = .arrowFilled
+        locationButton.backgroundColor = UIColor(white: 0.33, alpha: 0.8)
+        locationButton.addTarget(self, action: #selector(locationButtonTapped), for: .touchUpInside )
+        locationButton.isHidden = true
+    }
+    
+    func checkLocationEnabled() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+        } else {
+            let alert = UIAlertController(title: "Location service is disabled", message: "Do you want to turn it on?", preferredStyle: .alert)
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
+                guard let url = URL(string: "App-prefs:root=LOCATION_SERVICES") else { return }
+                UIApplication.shared.open(url)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            alert.addAction(submitAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true)
+        }
+    }
+    
+    func checkAutorization() {
+        switch locationManager.authorizationStatus {
+            
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            break
+        case .denied:
+            let alert = UIAlertController(title: "Location is denied", message: "Do you want to turn it on?", preferredStyle: .alert)
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
+                guard let url = URL(string: "App-prefs:root=LOCATION_SERVICES") else { return }
+                UIApplication.shared.open(url)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            alert.addAction(submitAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true)
+        case .authorizedAlways, .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            locationManager.startUpdatingLocation()
+            locationButton.isHidden = false
+        @unknown default:
+            break
+        }
     }
     
     private func addPins() {
@@ -89,9 +166,18 @@ class MapVC: UIViewController {
     
 }
 
+extension MapVC: CLLocationManagerDelegate {
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkAutorization()
+    }
+}
+
 extension MapVC: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard !(annotation is MKUserLocation) else { return nil }
         
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "MKAnnotationView", for: annotation) as! MKMarkerAnnotationView
         
