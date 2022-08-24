@@ -266,14 +266,14 @@ extension SearchVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text, !text.isEmpty else { return }
-        NetworkManager.request(for: .search, with: text) { data in
-            guard let data = data else { return }
-            do {
-                let locations = try JSONDecoder().decode([Location].self, from: data)
+        NetworkManager.request(for: .search, with: text) { (result: Result<[Location],Error>) in
+            
+            switch result {
+            case .success(let locations):
                 let searchResultsVC = searchController.searchResultsController as! SearchResultsTVC
                 searchResultsVC.searchVC = self
                 searchResultsVC.locations = locations
-            } catch {
+            case .failure(let error):
                 print(error.localizedDescription)
             }
         }

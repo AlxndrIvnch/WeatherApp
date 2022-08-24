@@ -13,7 +13,7 @@ class NetworkManager {
     static private let accessKey = "52d2cc82ddb84564be7122731221707"
     static private let rootUrl = "https://api.weatherapi.com/v1/"
     
-    static func getUrl(for request: RequestType, and text: String, language: Language = .ukrainian) -> URL? {
+    static private func getUrl(for request: RequestType, and text: String, language: Language = .ukrainian) -> URL? {
         guard let httpsQ = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
         switch request {
         case .search:
@@ -22,48 +22,52 @@ class NetworkManager {
             return URL(string: rootUrl + "\(request.rawValue).json?key=\(accessKey)&q=\(httpsQ)&days=10") //&lang=\(language.rawValue)
         }
     }
-    
-    static func request(for type: RequestType, with text: String, and language: Language = .ukrainian , handler: @escaping (Data?) -> ()) {
-            
-            guard let url = getUrl(for: type, and: text, language: language) else { return }
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            request.allHTTPHeaderFields = ["Content-Type": "application/json; Charset=UTF-8"]
-            
-            AF.request(request).responseData { response in
-                
-                switch response.result {
-                case .success(let data):
-                    handler(data)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    handler(nil)
-                }
-            }.resume()
+
+    static private func decode<T: Decodable>(form data: Data) -> Result<T, Error> {
+        do {
+            let decoded = try JSONDecoder().decode(T.self, from: data)
+            return .success(decoded)
+        } catch {
+            return .failure(error)
         }
+    }
     
-    static func groupRequest(for type: RequestType, with texts: [String], and language: Language = .ukrainian , handler: @escaping ([Data?]) -> ()) {
+    static func request<T: Decodable>(for type: RequestType, with text: String, and language: Language = .ukrainian , handler: @escaping (Result<T, Error>) -> Void) {
+        
+        guard let url = getUrl(for: type, and: text, language: language) else { return }
+        
+        AF.request(url, method: .get, headers: .default).responseData { response in
+            
+            switch response.result {
+            case .success(let data): handler(decode(form: data))
+            case .failure(let error): handler(.failure(error))
+            }
+        }.resume()
+    }
+    
+    static func groupRequest<T: Decodable>(for type: RequestType, with texts: [String], and language: Language = .ukrainian , handler: @escaping ([T]) -> ()) {
         
         let dispatchGroup = DispatchGroup()
         
-        var dataArray = [Data?]()
+        var results = [T]()
         
         for text in texts {
             dispatchGroup.enter()
             
-            request(for: type, with: text) { data in
-                dataArray.append(data)
+            request(for: type, with: text) { (result : Result<T, Error>) in
+                switch result {
+                case .success(let success):
+                    results.append(success)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
                 dispatchGroup.leave()
             }
         }
-        
         dispatchGroup.notify(queue: .main) {
-            handler(dataArray)
+            handler(results)
         }
-        
     }
-    
 }
 
 extension NetworkManager {

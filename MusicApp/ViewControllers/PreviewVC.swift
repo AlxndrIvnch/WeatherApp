@@ -41,42 +41,40 @@ class PreviewVC: UIViewController {
     
     func setup(with location: Location) {
 
-        NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { [weak self] data in
-            guard let data = data, let self = self else { return }
-            do {
-                let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
+        NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { [weak self] (result: Result<Weather,Error>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let weatherModel):
                 self.weatherModel = weatherModel
                 if !(self.searchVC?.weatherModels.contains(where: { $0.location == weatherModel.location }) ?? true) {
                     self.navItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addLocation))
                 }
-            } catch {
+            case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
     
     func setup(with coordinates: String) {
-        NetworkManager.request(for: .forecast, with: coordinates) { [weak self] data in
-            guard let data = data, let self = self else { return }
-            do {
-                let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
+        NetworkManager.request(for: .forecast, with: coordinates) { [weak self] (result: Result<Weather,Error>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let weatherModel):
                 
                 guard let location = weatherModel.location else { return }
-                
-                NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { data in
-                    guard let data = data else { return }
-                    do {
-                        let weatherModel = try JSONDecoder().decode(Weather.self, from: data)
+                NetworkManager.request(for: .forecast, with: location.getNameRegionCountryString()) { (result: Result<Weather,Error>) in
+                    
+                    switch result {
+                    case .success(let weatherModel):
                         self.weatherModel = weatherModel
                         if !(self.mapVC?.weatherModels.contains(where: { $0.location == weatherModel.location }) ?? true) {
                             self.navItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addLocation))
                         }
-                    } catch {
+                    case .failure(let error):
                         print(error.localizedDescription)
                     }
                 }
-
-            } catch {
+            case .failure(let error):
                 print(error.localizedDescription)
             }
         }
