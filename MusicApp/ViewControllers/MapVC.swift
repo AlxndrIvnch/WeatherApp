@@ -13,7 +13,7 @@ class MapVC: UIViewController {
     
     var weatherModels: [Weather]!
     
-    weak var mainVC: ViewController!
+    weak var mainVC: MainVC!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,6 @@ import Alamofire
 import UIKit
 
 class MainVC: UIViewController {
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var toolbar: UIToolbar!
     var pageControl: UIPageControl!

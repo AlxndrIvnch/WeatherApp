@@ -18,7 +18,7 @@ class SearchVC: UIViewController {
     var longpress: UILongPressGestureRecognizer!
     var canMove: Bool = true
     
-    weak var mainVC: ViewController!
+    weak var mainVC: MainVC!
     
     override func viewDidLoad() {
         super.viewDidLoad()

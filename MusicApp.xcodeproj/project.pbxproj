@@ -50,7 +50,7 @@
 		1FBE7C30288822C0007A3404 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C2F288822C0007A3404 /* SearchVC.swift */; };
 		1FBE7C3228884AED007A3404 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C3128884AED007A3404 /* Weather.swift */; };
 		1FBE7C362888544C007A3404 /* SearchResultsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE7C352888544C007A3404 /* SearchResultsTVC.swift */; };
-		70B0B53C29250353006CB0C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0B53B29250353006CB0C1 /* ViewController.swift */; };
+		70B0B53C29250353006CB0C1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0B53B29250353006CB0C1 /* MainVC.swift */; };
 		8DF3053C64FAEE4137BF830C /* Pods_MusicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE943F388EEA50B4F2EC154 /* Pods_MusicApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +102,7 @@
 		1FBE7C3128884AED007A3404 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		1FBE7C352888544C007A3404 /* SearchResultsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTVC.swift; sourceTree = "<group>"; };
 		6CE943F388EEA50B4F2EC154 /* Pods_MusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70B0B53B29250353006CB0C1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		70B0B53B29250353006CB0C1 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B30AC2DDF4EB44BCE7397BD8 /* Pods-MusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.release.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +187,7 @@
 		1FA22CED288A083B005A7407 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				70B0B53B29250353006CB0C1 /* ViewController.swift */,
+				70B0B53B29250353006CB0C1 /* MainVC.swift */,
 				1FBE7C2F288822C0007A3404 /* SearchVC.swift */,
 				1FBE7C352888544C007A3404 /* SearchResultsTVC.swift */,
 				1FA22CFE288A45BE005A7407 /* PreviewVC.swift */,
@@ -423,7 +423,7 @@
 				1FBE7C27288779D7007A3404 /* CurrentWeather.swift in Sources */,
 				1FBE7C2328875C0E007A3404 /* RoundedBackgroundView.swift in Sources */,
 				1FA22CFD288A2D93005A7407 /* Date + extension .swift in Sources */,
-				70B0B53C29250353006CB0C1 /* ViewController.swift in Sources */,
+				70B0B53C29250353006CB0C1 /* MainVC.swift in Sources */,
 				1FBE7C1D2887251F007A3404 /* HourForecast.swift in Sources */,
 				1F0AEEE628943B9400238F3C /* UIImage + extension.swift in Sources */,
 				1FBE7C1328860E02007A3404 /* Location.swift in Sources */,
